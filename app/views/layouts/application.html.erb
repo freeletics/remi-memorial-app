@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <section class="jumbotron text-center">
+      <% if current_user %>
+        <%= link_to "Logout", "/auth/logout", method: "delete" %>
+      <% else %>
+        <%= link_to "Register or log in", "/auth/auth0" %>
+      <% end %>
+    </section>
+
     <%= yield %>
   </body>
 </html>
