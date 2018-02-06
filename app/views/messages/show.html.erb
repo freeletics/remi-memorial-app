@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @message.content %>
+</p>
+
+<% if @message.image.attached? %>
+  <p>
+    <strong>Image:</strong>
+    <br>
+    <%= image_tag @message.image %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>
