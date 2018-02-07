@@ -9,17 +9,24 @@
   </head>
 
   <body>
-    <section class="jumbotron text-center">
-      <%= link_to "About Rémi", about_path %>
+    <header class="page-header">
+      <nav class="page-nav">
+        <%= link_to "Home", root_path %>
+        <%= link_to "About Rémi", about_path %>
 
-      <% if current_user %>
-        <%= link_to "My messages", my_messages_path %>
-        <%= link_to "Logout", "/auth/logout", method: "delete" %>
-      <% else %>
-        <%= link_to "Register or log in", "/auth/auth0" %>
-      <% end %>
-    </section>
+        <% if current_user %>
+          <%= link_to "My Messages", my_messages_path %>
+          <%= link_to "Logout", "/auth/logout", method: "delete" %>
+        <% else %>
+          <%= link_to "Register or log in", "/auth/auth0" %>
+        <% end %>
+      </nav>
 
-    <%= yield %>
+      <h1>In loving memory<br>of Rémi Barraquand</h1>
+    </header>
+
+    <article class="page-content">
+      <%= yield %>
+    </article>
   </body>
 </html>

@@ -1,0 +1,45 @@
+scss_files: 'app/modules/**/*.scss'
+
+severity: error
+
+linters:
+  DisableLinterReason:
+    enabled: true
+
+  HexLength:
+    style: long
+
+  NestingDepth:
+    max_depth: 5
+
+  SelectorDepth:
+    max_depth: 5
+
+  Shorthand:
+    enabled: false
+
+  PropertySortOrder:
+    order:
+      - display
+      - position
+      - top
+      - right
+      - bottom
+      - left
+      - overflow
+      - z-index
+      - content
+      - flex
+      - flex-basis
+      - flex-direction
+      - flex-flow
+      - flex-wrap
+      - align-content
+      - align-items
+      - align-self
+      - justify-content
+      - order
+      - float
+
+  QualifyingElement:
+    allow_element_with_attribute: true

@@ -47,6 +47,8 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    autoprefixer-rails (7.2.5)
+      execjs
     bootsnap (1.1.8)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -159,6 +161,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    scss_lint (0.56.0)
+      rake (>= 0.9, < 13)
+      sass (~> 3.5.3)
     selenium-webdriver (3.9.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -191,6 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootsnap (>= 1.1.0)
   capybara (~> 2.15)
   chromedriver-helper
@@ -201,6 +207,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.0.rc1)
   sass-rails (~> 5.0)
+  scss_lint
   selenium-webdriver
   spring
   turbolinks (~> 5)

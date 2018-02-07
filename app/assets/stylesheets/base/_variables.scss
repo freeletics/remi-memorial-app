@@ -1,0 +1,27 @@
+// Grey scale (old codes -- need refactoring)
+$color-grey-50: #f9f9f9;
+$color-grey-100: #f3f3f3;
+$color-grey-150: #ececec;
+$color-grey-200: #c8c8c8;
+$color-grey-300: #8d8d8d;
+$color-grey-400: #494949;
+$color-grey-450: #353535;
+$color-grey-500: #222222;
+$color-grey-600: #161616;
+
+// Other
+$color-white: #ffffff;
+$color-black: #000000;
+$color-confirmation-green: #00954a;
+$color-discount-green: #14b360;
+$color-danger-red: #ff3401;
+
+$media-from-xs: 'min-width: 0';
+$media-from-sm: 'min-width: 600px';
+$media-from-md: 'min-width: 900px';
+$media-from-lg: 'min-width: 1200px';
+$media-from-xl: 'min-width: 1800px';
+$media-to-sm: 'max-width: 599px';
+$media-to-md: 'max-width: 899px';
+$media-to-lg: 'max-width: 1199px';
+$media-to-xl: 'max-width: 1799px';

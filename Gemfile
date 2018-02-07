@@ -8,6 +8,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
+gem "autoprefixer-rails"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -24,6 +25,7 @@ end
 
 group :development do
   gem 'spring'
+  gem 'scss_lint', require: false
 end
 
 group :test do
