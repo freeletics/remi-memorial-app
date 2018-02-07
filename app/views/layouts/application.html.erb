@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RemiMemorialApp</title>
+    <title>Rémi Memorial Page</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <section class="jumbotron text-center">
+      <%= link_to "About Rémi", about_path %>
+
+      <% if current_user %>
+        <%= link_to "My messages", my_messages_path %>
+        <%= link_to "Logout", "/auth/logout", method: "delete" %>
+      <% else %>
+        <%= link_to "Register or log in", "/auth/auth0" %>
+      <% end %>
+    </section>
+
     <%= yield %>
   </body>
 </html>
