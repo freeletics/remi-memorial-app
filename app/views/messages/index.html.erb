@@ -9,7 +9,7 @@
     <p><%= message.name %></p>
     <p><%= message.content %></p>
     <% if message.image.attached? %>
-      <%= image_tag imgix_url(message.image) %>
+      <%= image_tag imgix_url(message.image, { fit: "crop", crop: "entropy,egdes,faces", w: 400, h: 300}) %>
     <% end %>
   <% end %>
 <% end %>
