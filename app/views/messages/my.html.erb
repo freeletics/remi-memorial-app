@@ -1,28 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>My Messages</h1>
+<p>
+  <%= link_to "Leave your message", new_message_path %>
+</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= message.name %></td>
-        <td><%= message.content %></td>
-        <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
-        <td><%= link_to 'Delete', message_path(message), method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Message', new_message_path %>
+<%= render partial: "message", collection: @messages %>
