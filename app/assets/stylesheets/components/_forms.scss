@@ -1,0 +1,38 @@
+.form-control {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  color: $color-grey-500;
+  padding: 0 8px;
+  border: 1px solid $color-grey-200;
+  background-color: $color-white;
+  outline: none;
+  vertical-align: middle;
+  border-radius: 3px;
+
+  &:focus {
+    border-color: $color-grey-300;
+  }
+
+  &:invalid,
+  &:-moz-submit-invalid,
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+  padding: 10px;
+  line-height: 1.3333;
+}
+
+.form-group {
+  margin-bottom: 32px;
+
+  > label {
+    display: block;
+    margin-bottom: 4px;
+  }
+}

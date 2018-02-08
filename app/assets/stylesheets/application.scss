@@ -3,4 +3,8 @@
 @import 'base/variables';
 @import 'base/layout';
 
-@import 'direct-upload';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/direct-upload';
+
+@import 'messages/messages';

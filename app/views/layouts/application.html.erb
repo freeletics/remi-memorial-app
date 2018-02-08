@@ -3,6 +3,7 @@
   <head>
     <title>Rémi Memorial Page</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,15 +12,17 @@
   <body>
     <header class="page-header">
       <nav class="page-nav">
-        <%= link_to "Home", root_path %>
-        <%= link_to "About Rémi", about_path %>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About Rémi", about_path %></li>
 
-        <% if current_user %>
-          <%= link_to "My Messages", my_messages_path %>
-          <%= link_to "Logout", "/auth/logout", method: "delete" %>
-        <% else %>
-          <%= link_to "Register or log in", "/auth/auth0" %>
-        <% end %>
+          <% if current_user %>
+            <li><%= link_to "My Messages", my_messages_path %></li>
+            <li><%= link_to "Logout", "/auth/logout", method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Register or log in", "/auth/auth0" %></li>
+          <% end %>
+        </ul>
       </nav>
 
       <h1>In loving memory<br>of Rémi Barraquand</h1>
