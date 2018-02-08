@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :require_user, except: [:index, :show]
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:edit, :update, :destroy]
 
   def index
     @messages = Message.all
@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @message = Message.find(params[:id])
   end
 
   def new
