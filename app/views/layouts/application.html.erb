@@ -18,9 +18,9 @@
 
           <% if current_user %>
             <li><%= link_to "My Messages", my_messages_path %></li>
-            <li><%= link_to "Logout", "/auth/logout", method: "delete" %></li>
+            <li><%= link_to "Log Out", "/auth/logout", method: "delete" %></li>
           <% else %>
-            <li><%= link_to "Register or log in", "/auth/auth0" %></li>
+            <li><%= link_to "Log In", "/auth/auth0" %></li>
           <% end %>
         </ul>
       </nav>
