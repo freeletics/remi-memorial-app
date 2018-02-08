@@ -1,12 +1,12 @@
 <li>
-  <%= link_to message, class: "message #{message.image.attached? ? 'has-image' : ''}" do %>
+  <%=
+    link_to message,
+    class: "message #{message.image.attached? ? 'has-image' : nil}",
+    style: "background-image: url('#{message.image.attached? ? imgix_url(message.image, { fit: "clip", crop: "entropy,egdes,faces", w: 690, h: 690}) : nil}')" do
+  %>
     <div class="message-content">
-      <p><%= message.name %></p>
-      <p><%= message.content %></p>
+      <p><strong><%= message.name %></strong></p>
+      <p><%= truncate(message.content, length: 180) %></p>
     </div>
-
-    <% if message.image.attached? %>
-      <%= image_tag imgix_url(message.image, { fit: "clip", crop: "entropy,egdes,faces", w: 600, h: 600}) %>
-    <% end %>
   <% end %>
 </li>
