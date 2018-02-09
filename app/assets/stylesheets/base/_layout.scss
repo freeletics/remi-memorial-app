@@ -3,6 +3,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $color-grey-100;
+  color: $color-grey-300;
 }
 
 body {
@@ -11,7 +12,41 @@ body {
   margin: 0 auto;
 }
 
-.page-header {
+.wrapper {
+  position: relative;
+  max-width: 980px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link-back {
+  display: inline-block;
+  font-size: 32px;
+  color: lighten($color-grey-300, 5%);
+  transition: color .175s;
+
+  &:hover {
+    color: $color-grey-300;
+  }
+
+  > svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+
+  @media ($media-from-lg) {
+    position: absolute;
+    top: 4px;
+    right: calc(100% + 4vw);
+  }
+}
+
+.header {
   min-height: 490px;
   background: {
     color: $color-grey-500;
@@ -31,7 +66,7 @@ body {
   }
 }
 
-.page-nav {
+.nav {
   padding: 24px 8px;
 
   > ul {
@@ -70,6 +105,28 @@ body {
   }
 }
 
-.page-content {
+.content {
   margin: 40px 0;
+}
+
+.headline {
+  color: $color-grey-400;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+
+    @media ($media-from-md) {
+      font-size: 40px;
+    }
+  }
+}
+
+.footer {
+  font-size: 18px;
+  line-height: 1.5;
+  color: $color-grey-200;
+  text-align: center;
+  margin: 40px 0 50px;
 }

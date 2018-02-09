@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <header class="page-header">
-      <nav class="page-nav">
+    <%= render "layouts/icons" %>
+
+    <header class="header">
+      <nav class="nav">
         <ul>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "About Rémi", about_path %></li>
@@ -28,8 +30,16 @@
       <h1>In loving memory<br>of Rémi Barraquand</h1>
     </header>
 
-    <article class="page-content">
+    <article class="content">
       <%= yield %>
     </article>
+
+    <footer class="footer">
+      <strong>
+        Will Always be Remembered
+        <br>
+        &#8226;&#8226;&#8226;
+      </strong>
+    </footer>
   </body>
 </html>

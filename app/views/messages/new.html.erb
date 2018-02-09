@@ -1,5 +1,10 @@
-<h1>New Message</h1>
+<div class="wrapper">
+  <header class="headline">
+    <a href="<%= messages_path %>" class="link-back">
+      <svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg>
+    </a>
+    <h1>Leave your Message</h1>
+  </header>
 
-<%= render 'form', message: @message %>
-
-<%= link_to 'Back', messages_path %>
+  <%= render 'form', message: @message %>
+</div>

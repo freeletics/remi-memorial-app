@@ -9,6 +9,7 @@
   line-height: 1;
   font-weight: bold;
   padding: 0 32px;
+  outline: 0;
 }
 
 .btn-default {
@@ -19,5 +20,20 @@
 
   &:hover {
     background-color: rgba($color-grey-400, .05);
+  }
+}
+
+.btn-primary {
+  color: $color-white;
+  background-color: $color-green;
+  transition: background-color .175s;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-green, 5%);
+  }
+
+  &:active {
+    background-color: darken($color-green, 8%);
   }
 }
