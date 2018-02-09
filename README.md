@@ -1,24 +1,10 @@
-# README
+# Development
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To setup app, run `bin/setup`
 
-Things you may want to cover:
+# Deployment
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Install Heroku Toolbelt https://devcenter.heroku.com/articles/heroku-cli
+* Ask members for access
+* `git remote add heroku https://git.heroku.com/remi-memorial-app.git`
+* `git push heroku master`
