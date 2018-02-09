@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2018_02_09_113918) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false, null: false
   end
 
   add_foreign_key "messages", "users"
