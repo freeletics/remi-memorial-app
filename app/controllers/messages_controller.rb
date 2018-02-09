@@ -11,15 +11,16 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
+    @message = Message.find_by(id: params[:id])
+
+    redirect_to messages_path, notice: 'Message not found.' unless @message
   end
 
   def new
     @message = current_user.messages.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @message = current_user.messages.new(message_params)
@@ -47,9 +48,11 @@ class MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = current_user.messages.find_by(id: params[:id])
+      @message = Message.find_by(id: params[:id])
 
-      return if @message || current_user.admin
+      redirect_to messages_path, notice: 'Message not found.' unless @message
+
+      return if current_user.messages.include?(@message) || current_user.admin
 
       redirect_to messages_path, notice: 'Unauthorized.'
     end
