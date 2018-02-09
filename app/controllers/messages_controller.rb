@@ -47,7 +47,11 @@ class MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = current_user.messages.find(params[:id])
+      @message = current_user.messages.find_by(id: params[:id])
+
+      return if @message || current_user.admin
+
+      redirect_to messages_path, notice: 'Unauthorized.'
     end
 
     # Only allow a trusted parameter "white list" through.
