@@ -18,7 +18,10 @@
   </p>
 <% end %>
 
-<% if current_user.try(:id) == @message.user_id %>
+<% if current_user && (current_user.id == @message.user_id || current_user.admin) %>
   <%= link_to 'Edit', edit_message_path(@message) %> |
+    <%=
+      link_to 'Delete', message_path(@message), method: :delete, data: { confirm: "Are you sure?" }
+    %> |
 <% end %>
 <%= link_to 'Back', messages_path %>
