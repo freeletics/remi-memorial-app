@@ -2,7 +2,7 @@ class Auth0Controller < ApplicationController
   def callback
     @user = User.find_or_create_from_auth_hash(auth_hash)
     session[:user_id] = @user.id
-    redirect_to '/'
+    redirect_to request.env['omniauth.origin'] || root_path
   end
 
   def failure
