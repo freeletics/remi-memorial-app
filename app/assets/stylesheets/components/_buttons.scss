@@ -37,3 +37,14 @@
     background-color: darken($color-green, 8%);
   }
 }
+
+.btn-danger {
+  color: $color-danger-red;
+  border-color: currentColor;
+  background-color: transaprent;
+  transition: background-color .175s;
+
+  &:hover {
+    background-color: rgba($color-danger-red, .05);
+  }
+}

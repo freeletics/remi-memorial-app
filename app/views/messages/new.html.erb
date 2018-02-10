@@ -1,10 +1,10 @@
-<div class="wrapper">
-  <header class="headline">
-    <a href="<%= messages_path %>" class="link-back">
-      <svg class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"></use></svg>
-    </a>
-    <h1>Leave your Message</h1>
-  </header>
+<header class="headline">
+  <a href="<%= messages_path %>" class="link-back" title="Back">
+    <svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>
+  </a>
+  <h1>Leave your Message</h1>
+</header>
 
+<div class="wrapper">
   <%= render 'form', message: @message %>
 </div>

@@ -12,42 +12,12 @@ body {
   margin: 0 auto;
 }
 
-.wrapper {
-  position: relative;
-  max-width: 980px;
-  padding: 0 16px;
-  margin: 0 auto;
-}
-
 .text-center {
   text-align: center;
 }
 
-.link-back {
-  display: inline-block;
-  font-size: 32px;
-  color: lighten($color-grey-300, 5%);
-  transition: color .175s;
-
-  &:hover {
-    color: $color-grey-300;
-  }
-
-  > svg {
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
-  }
-
-  @media ($media-from-lg) {
-    position: absolute;
-    top: 4px;
-    right: calc(100% + 4vw);
-  }
-}
-
 .header {
-  min-height: 490px;
+  min-height: 460px;
   background: {
     color: $color-grey-500;
     image: image-url('hero.jpg');
@@ -58,50 +28,11 @@ body {
 
   h1 {
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1.1;
     font-weight: bold;
     color: $color-white;
-    margin: 160px 0 0 10%;
+    margin: 140px 0 0 10%;
     padding-right: 100px;
-  }
-}
-
-.nav {
-  padding: 24px 8px;
-
-  > ul {
-    display: flex;
-
-    li {
-      margin: 0 8px;
-
-      &:last-of-type {
-        margin-left: auto;
-      }
-    }
-
-    a {
-      display: inline-block;
-      font-size: 14px;
-      text-align: center;
-      padding: 8px;
-      color: $color-white;
-      transition: color .175s;
-
-      &:hover {
-        color: rgba($color-white, .8);
-      }
-    }
-  }
-
-  @media ($media-from-sm) {
-    padding: 24px 16px;
-
-    > ul {
-      a {
-        font-size: 24px;
-      }
-    }
   }
 }
 
@@ -109,18 +40,60 @@ body {
   margin: 40px 0;
 }
 
+%wrapper {
+  max-width: 900px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.wrapper,
 .headline {
+  @extend %wrapper;
+}
+
+.headline {
+  position: relative;
   color: $color-grey-400;
   margin-bottom: 40px;
 
   h1 {
     font-size: 32px;
-    line-height: 1.2;
+    line-height: 1.1;
 
-    @media ($media-from-md) {
+    @media ($media-from-sm) {
       font-size: 40px;
     }
   }
+
+  .link-back {
+    font-size: 38px;
+    color: lighten($color-grey-300, 5%);
+    transition: color .175s;
+
+    &:hover {
+      color: $color-grey-300;
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+
+    @media ($media-from-lg) {
+      position: absolute;
+      top: 0;
+      right: calc(100% + 5vw);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $color-grey-200;
+  padding-top: 24px;
+  margin-top: 24px;
 }
 
 .footer {

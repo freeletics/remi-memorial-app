@@ -1,9 +1,16 @@
-<p id="notice"><%= notice %></p>
+<header class="headline">
+  <a href="<%= messages_path %>" class="link-back" title="Back">
+    <svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>
+  </a>
+  <h1>My Messages</h1>
+</header>
 
-<section class="headline text-center">
-  <%= link_to "Leave your message", new_message_path, class: "btn btn-primary" %>
-</section>
+<p class="notice"><%= notice %></p>
 
-<ul class="messages-list">
+<ul class="message-list">
   <%= render partial: "message", collection: @messages %>
 </ul>
+
+<section class="headline text-center">
+  <%= link_to "Leave a new message", new_message_path, class: "btn btn-primary" %>
+</section>

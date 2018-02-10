@@ -1,27 +1,38 @@
-<p id="notice"><%= notice %></p>
+<header class="headline">
+  <a href="<%= messages_path %>" class="link-back" title="Back">
+    <svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg>
+  </a>
+  <h1>Message</h1>
+</header>
 
-<p>
-  <strong>Name:</strong>
-  <%= @message.name %>
-</p>
+<div class="wrapper">
+  <p class="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @message.content %>
-</p>
+  <section class="message-preview">
+    <p>
+      <strong>From:</strong>
+      <%= @message.name %>
+    </p>
 
-<% if @message.image.attached? %>
-  <p>
-    <strong>Image:</strong>
-    <br>
-    <%= image_tag imgix_url(@message.image, { fit: "clip", w: 500, h: 500 }) %>
-  </p>
-<% end %>
+    <p>
+      <strong>Message:</strong>
+      <br>
+      <%= @message.content %>
+    </p>
 
-<% if current_user && (current_user.id == @message.user_id || current_user.admin) %>
-  <%= link_to 'Edit', edit_message_path(@message) %> |
-    <%=
-      link_to 'Delete', message_path(@message), method: :delete, data: { confirm: "Are you sure?" }
-    %> |
-<% end %>
-<%= link_to 'Back', messages_path %>
+    <% if @message.image.attached? %>
+      <p>
+        <%= image_tag imgix_url(@message.image, { fit: "clip", w: 500, h: 500 }) %>
+      </p>
+    <% end %>
+
+    <% if current_user && (current_user.id == @message.user_id || current_user.admin) %>
+      <div class="actions">
+        <%= link_to 'Edit', edit_message_path(@message), class: "btn btn-default" %>
+        <%=
+          link_to 'Delete', message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+        %>
+      </div>
+    <% end %>
+  </section>
+</div>

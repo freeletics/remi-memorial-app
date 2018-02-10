@@ -15,11 +15,13 @@
     <header class="header">
       <nav class="nav">
         <ul>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "About Rémi", about_path %></li>
+          <li><%= link_to "Home", root_path, class: current_class?(root_path) %></li>
+          <li><%= link_to "About Rémi", about_path, class: current_class?(about_path) %></li>
 
           <% if current_user %>
-            <li><%= link_to "My Messages", my_messages_path %></li>
+            <% if current_user.messages.any? %>
+              <li><%= link_to "My Messages", my_messages_path, class: current_class?(my_messages_path) %></li>
+            <% end %>
             <li><%= link_to "Log Out", "/auth/logout", method: "delete" %></li>
           <% else %>
             <li><%= link_to "Log In", "/auth/auth0" %></li>
