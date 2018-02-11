@@ -27,12 +27,17 @@ body {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 32px;
     line-height: 1.1;
     font-weight: bold;
     color: $color-white;
-    margin: 140px 0 0 10%;
+    margin: 48px 0 0 24px;
     padding-right: 100px;
+
+    @media ($media-from-sm) {
+      font-size: 40px;
+      margin: 140px 0 0 10%;
+    }
   }
 }
 

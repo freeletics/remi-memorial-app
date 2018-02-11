@@ -1,23 +1,15 @@
 .nav {
-  padding: 24px 8px;
+  padding: 24px;
 
   > ul {
     display: flex;
-
-    li {
-      margin: 0 8px;
-
-      &:last-of-type {
-        margin-left: auto;
-      }
-    }
+    flex-direction: column;
 
     a {
       display: inline-block;
-      font-size: 14px;
+      font-size: 22px;
       text-align: center;
-      padding: 8px;
-
+      padding: 8px 0;
       color: rgba($color-white, .8);
       transition: color .175s;
 
@@ -37,8 +29,19 @@
     padding: 24px 16px;
 
     > ul {
+      flex-direction: row;
+
+      li {
+        margin: 0 8px;
+
+        &:last-of-type {
+          margin-left: auto;
+        }
+      }
+
       a {
         font-size: 24px;
+        padding: 8px;
       }
     }
   }

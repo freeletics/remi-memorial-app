@@ -50,15 +50,13 @@ textarea.form-control {
   margin-bottom: 16px;
 
   h2 {
-    text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
+    margin-bottom: 16px;
     font-size: 14px;
-    background-color: $color-danger-red;
-    color: $color-white;
+    color: $color-danger-red;
   }
 
-  ul li {
+  li {
     font-size: 12px;
     list-style: square;
   }
