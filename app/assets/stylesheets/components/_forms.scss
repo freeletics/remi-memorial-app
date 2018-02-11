@@ -38,3 +38,28 @@ textarea.form-control {
     margin-bottom: 4px;
   }
 }
+
+.field_with_errors {
+  .form-control {
+    border-color: $color-danger-red;
+  }
+}
+
+#error_explanation {
+  max-width: 480px;
+  margin-bottom: 16px;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 14px;
+    background-color: $color-danger-red;
+    color: $color-white;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

@@ -1,0 +1,19 @@
+.notice:not(:empty) {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba($color-green, .6);
+  color: $color-white;
+  text-align: center;
+  padding: 6px 8px;
+  font-size: 14px;
+  animation: notice .5s 5s forwards;
+}
+
+@keyframes notice {
+  to {
+    top: -100px;
+  }
+}
