@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  > span {
+    margin: 4px;
+  }
+
+  a,
+  .current {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  a {
+    border: 1px solid $color-grey-200;
+    color: $color-grey-400;
+
+    &:hover {
+      background-color: rgba($color-grey-200, .2);
+    }
+
+    &:active {
+      background-color: rgba($color-grey-200, .4);
+    }
+  }
+
+  .current {
+    color: $color-white;
+    background-color: $color-grey-300;
+    font-weight: bold;
+  }
+}
