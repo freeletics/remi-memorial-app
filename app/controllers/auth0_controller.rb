@@ -10,6 +10,8 @@ class Auth0Controller < ApplicationController
     @error_msg = request.params['message']
   end
 
+  private
+
   def auth_hash
     request.env['omniauth.auth']
   end

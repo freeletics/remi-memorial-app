@@ -46,19 +46,20 @@ class MessagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_message
-      @message = Message.find_by(id: params[:id])
 
-      redirect_to messages_path, notice: 'Message not found.' unless @message
+  # Use callbacks to share common setup or constraints between actions.
+  def set_message
+    @message = Message.find_by(id: params[:id])
 
-      return if current_user.messages.include?(@message) || current_user.admin
+    redirect_to messages_path, notice: 'Message not found.' unless @message
 
-      redirect_to messages_path, notice: 'Unauthorized.'
-    end
+    return if current_user.messages.include?(@message) || current_user.admin
 
-    # Only allow a trusted parameter "white list" through.
-    def message_params
-      params.require(:message).permit(:content, :name, :image)
-    end
+    redirect_to messages_path, notice: 'Unauthorized.'
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def message_params
+    params.require(:message).permit(:content, :name, :image)
+  end
 end

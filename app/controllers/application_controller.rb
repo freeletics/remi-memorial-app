@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # List of all available options: https://docs.imgix.com/apis/url
   def imgix_url(image, options = {})
     key = image.blob.key
-    query = { auto: :format }.merge(options).to_query
+    query = {auto: :format}.merge(options).to_query
     "https://remi-memorial-app.imgix.net/#{key}?#{query}"
   end
 

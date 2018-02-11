@@ -4,8 +4,8 @@
 
 <p class="notice"><%= notice %></p>
 
-<ul class="message-list message-list-index">
+<ul id="messages" class="message-list message-list-index">
   <%= render partial: "message", collection: @messages %>
 </ul>
 
-<%= paginate @messages %>
+<%= paginate @messages, params: {anchor: "messages"} %>
