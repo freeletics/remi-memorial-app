@@ -1,5 +1,4 @@
 class Message < ApplicationRecord
-  # has_one_attached :image
   belongs_to :user
   has_one :image, dependent: :destroy
 
@@ -11,14 +10,16 @@ class Message < ApplicationRecord
 
   def image_id=(image_id)
     @image_id = image_id
-    build_image(external_id: Cloudinary::PreloadedFile.new(image_id).identifier) if image_id.present?
+    build_image(external_id: preloaded_file.identifier) if image_id.present?
   end
 
   private
 
   def image_signature_validity
-    if !Cloudinary::PreloadedFile.new(image_id).valid?
-      errors.add(:image_id, :invalid)
-    end
+    errors.add(:image_id, :invalid) if !preloaded_file.valid?
+  end
+
+  def preloaded_file
+    @preloaded_file ||= Cloudinary::PreloadedFile.new(image_id)
   end
 end

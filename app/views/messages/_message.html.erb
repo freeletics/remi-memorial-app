@@ -1,8 +1,8 @@
 <li>
   <%=
     link_to message,
-    class: "message #{message.image.attached? ? 'has-image' : nil}",
-    style: "background-image: url('#{message.image.attached? ? imgix_url(message.image, { fit: "clip", crop: "entropy,egdes,faces", w: 690, h: 690}) : nil}')" do
+    class: "message #{message.image ? 'has-image' : nil}",
+    style: "background-image: url('#{message.image ? cl_image_path(message.image.external_id, transformation: {crop: "fit", width: 690, height: 690}) : nil}')" do
   %>
     <div class="message-content">
       <p><strong><%= message.name %></strong></p>

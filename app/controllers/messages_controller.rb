@@ -3,11 +3,11 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:edit, :update, :destroy]
 
   def index
-    @messages = Message.page(params[:page]).per(17)
+    @messages = Message.includes(:image).page(params[:page]).per(17)
   end
 
   def my
-    @messages = current_user.messages
+    @messages = current_user.messages.includes(:image)
   end
 
   def show
@@ -58,8 +58,7 @@ class MessagesController < ApplicationController
     redirect_to messages_path, notice: 'Unauthorized.'
   end
 
-  # Only allow a trusted parameter "white list" through.
   def message_params
-    params.require(:message).permit(:content, :name).to_h.merge(image_id: params[:image_id])
+    params.require(:message).permit(:content, :name, :image_id)
   end
 end

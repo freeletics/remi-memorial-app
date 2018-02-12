@@ -23,8 +23,7 @@
 
   <div class="form-group">
     <%= form.label :image %>
-    <%= cl_image_upload_tag(:image_id) %>
-    <%# form.file_field :image, direct_upload: Rails.application.config.active_storage.service == :amazon %>
+    <%= cl_image_upload_tag(:"message[image_id]", tags: Rails.env) %>
   </div>
 
   <div class="actions">
