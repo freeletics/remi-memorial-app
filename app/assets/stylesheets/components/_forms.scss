@@ -39,6 +39,19 @@ textarea.form-control {
   }
 }
 
+.form-group-upload-image {
+  position: relative;
+  margin-bottom: 32px;
+
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
 .field_with_errors {
   .form-control {
     border-color: $color-danger-red;
