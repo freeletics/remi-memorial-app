@@ -5,8 +5,12 @@
     style: "background-image: url('#{message.image ? cl_image_path(message.image.external_id, sign_url: true, transformation: {crop: "fit", width: 690, height: 690}) : nil}')" do
   %>
     <div class="message-content">
-      <p><strong><%= message.name %></strong></p>
-      <p><%= truncate(message.content, length: 150) %></p>
+      <p>
+        <strong><%= message.name %></strong>
+        <br>
+        <small><%= message.created_at.strftime("%d/%m/%Y") %></small>
+      </p>
+      <p><%= truncate(message.content, length: 140) %></p>
     </div>
   <% end %>
 </li>
