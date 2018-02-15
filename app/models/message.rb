@@ -8,6 +8,10 @@ class Message < ApplicationRecord
 
   attr_reader :image_id
 
+  def self.recent
+    order(id: :desc)
+  end
+
   def image_id=(image_id)
     @image_id = image_id
     build_image(external_id: preloaded_file.identifier) if image_id.present?

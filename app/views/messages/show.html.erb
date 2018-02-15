@@ -22,7 +22,7 @@
 
     <% if @message.image %>
       <p>
-        <%= cl_image_tag(@message.image.external_id, transformation: {width: 500, height: 500, crop: "fit"}) %>
+        <%= cl_image_tag(@message.image.external_id, sign_url: true, transformation: {width: 500, height: 500, crop: "fit"}) %>
       </p>
     <% end %>
 
