@@ -17,7 +17,7 @@
       <nav class="nav">
         <ul>
           <li><%= link_to "Home", root_path, class: current_class?(root_path) %></li>
-          <li><%= link_to "About Rémi", about_path, class: current_class?(about_path) %></li>
+          <!-- <li><%= link_to "About Rémi", about_path, class: current_class?(about_path) %></li> -->
 
           <% if current_user %>
             <% if current_user.messages.any? %>
