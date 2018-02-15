@@ -27,7 +27,6 @@ chdir APP_ROOT do
   puts "\n== Copying development .env file =="
   unless File.exist?('.env')
     cp '.env.sample', '.env'
-    puts 'Ask other members for S3 credentials (we do not have development ones yet so they are not checked in)'
   end
 
   puts "\n== Preparing database =="

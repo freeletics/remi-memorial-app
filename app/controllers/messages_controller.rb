@@ -3,11 +3,11 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:edit, :update, :destroy]
 
   def index
-    @messages = Message.page(params[:page]).per(17)
+    @messages = Message.includes(:image).recent.page(params[:page]).per(17)
   end
 
   def my
-    @messages = current_user.messages
+    @messages = current_user.messages.includes(:image).recent
   end
 
   def show
@@ -47,7 +47,6 @@ class MessagesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_message
     @message = Message.find_by(id: params[:id])
 
@@ -58,8 +57,7 @@ class MessagesController < ApplicationController
     redirect_to messages_path, notice: 'Unauthorized.'
   end
 
-  # Only allow a trusted parameter "white list" through.
   def message_params
-    params.require(:message).permit(:content, :name, :image)
+    params.require(:message).permit(:content, :name, :image_id)
   end
 end

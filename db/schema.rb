@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_02_09_113918) do
+ActiveRecord::Schema.define(version: 2018_02_11_124933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2018_02_09_113918) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "external_id", null: false
+    t.bigint "message_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_images_on_message_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "content", null: false
     t.datetime "created_at", null: false
@@ -54,5 +62,6 @@ ActiveRecord::Schema.define(version: 2018_02_09_113918) do
     t.boolean "admin", default: false, null: false
   end
 
+  add_foreign_key "images", "messages"
   add_foreign_key "messages", "users"
 end

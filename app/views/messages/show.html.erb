@@ -20,17 +20,17 @@
       <%= @message.content %>
     </p>
 
-    <% if @message.image.attached? %>
+    <% if @message.image %>
       <p>
-        <%= image_tag imgix_url(@message.image, { fit: "clip", w: 500, h: 500 }) %>
+        <%= cl_image_tag(@message.image.external_id, sign_url: true, transformation: {width: 500, height: 500, crop: "fit"}) %>
       </p>
     <% end %>
 
     <% if current_user && (current_user.id == @message.user_id || current_user.admin) %>
       <div class="actions">
-        <%= link_to 'Edit', edit_message_path(@message), class: "btn btn-default" %>
+        <%= link_to 'Edit', edit_message_path(@message), class: "btn btn-sm btn-default" %>
         <%=
-          link_to 'Delete', message_path(@message), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+          link_to 'Delete', message_path(@message), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-danger"
         %>
       </div>
     <% end %>

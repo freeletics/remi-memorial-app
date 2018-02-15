@@ -10,17 +10,15 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'autoprefixer-rails'
 gem 'kaminari', '>= 1.0.0'
-
-# Use ActiveStorage variant
-gem 'mini_magick', '~> 4.8'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'cloudinary'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'omniauth', '~> 1.6.1'
 gem 'omniauth-auth0', '~> 2.0.0'
-
-gem 'aws-sdk-s3', require: false
 
 group :development, :test do
   gem 'dotenv-rails', require: 'dotenv/rails-now'

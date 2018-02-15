@@ -1,35 +1,46 @@
 .direct-upload {
-  display: inline-block;
+  display: block;
   position: relative;
-  padding: 2px 4px;
-  margin: 0 3px 3px 0;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+  border: 1px solid $color-grey-200;
   border-radius: 3px;
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: $color-grey-400;
+
+  &:not(.direct-upload--complete) {
+    ~ label.btn {
+      pointer-events: none;
+      opacity: .4;
+    }
+  }
 }
 
 .direct-upload--pending {
-  opacity: 0.6;
+  opacity: .6;
 }
 
 .direct-upload__progress {
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
-  opacity: 0.2;
-  background: #0076ff;
+  left: 0;
+  opacity: .2;
+  background: $color-blue;
   transition: width 120ms ease-out, opacity 60ms 60ms ease-in;
   transform: translate3d(0, 0, 0);
 }
 
 .direct-upload--complete .direct-upload__progress {
-  opacity: 0.4;
+  opacity: .4;
+  background: $color-green;
 }
 
 .direct-upload--error {
-  border-color: red;
+  border-color: $color-danger-red;
 }
 
 input[type=file][data-direct-upload-url][disabled] {
