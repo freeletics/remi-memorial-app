@@ -43,6 +43,11 @@ textarea.form-control {
   position: relative;
   margin-bottom: 32px;
 
+  p {
+    margin-bottom: 16px;
+    max-width: 650px;
+  }
+
   input[type="file"] {
     position: absolute;
     top: 0;

@@ -22,6 +22,7 @@
   </div>
 
   <div class="form-group-upload-image">
+    <p>If you have any picture together with <b>Rémi</b>, or any other that you would like to share with him and illustrate your message, please upload it here.</p>
     <%= cl_image_upload_tag(:"message[image_id]", tags: Rails.env, html: {id: "upload-image"}) %>
     <label class="btn btn-sm btn-default" for="upload-image">Upload Image</label>
   </div>
