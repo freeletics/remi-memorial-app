@@ -2,7 +2,7 @@
   <%=
     link_to message,
     class: "message #{message.image ? 'has-image' : nil}",
-    style: "background-image: url('#{message.image ? cl_image_path(message.image.external_id, sign_url: true, transformation: {crop: "fit", width: 690, height: 690}) : nil}')" do
+    style: "background-image: url('#{message.image ? cl_image_path(message.image.external_id, sign_url: true, crop: :fit, width: 690, height: 690, fetch_format: :auto, quality: :auto) : nil}')" do
   %>
     <div class="message-content">
       <p>
